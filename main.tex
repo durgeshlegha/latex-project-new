@@ -1,0 +1,46 @@
+% ============================================================================
+%  Assessment of Railroad Ballast Degradation under Modified Drop-Weight
+%  Impact Loading Conditions and Image-Based Morphological Analysis
+%
+%  B.Tech. Thesis  --  Gati Shakti Vishwavidyalaya
+%  Durgesh Kumar Legha (2270007) & Sandeep Patel (2280043)
+%
+%  Compile:  pdflatex -> bibtex -> pdflatex -> pdflatex   (or: latexmk -pdf)
+% ============================================================================
+\documentclass[12pt,a4paper,oneside]{report}
+
+\input{tex/preamble}
+
+\begin{document}
+
+% ---------------------------------------------------------------- FRONT MATTER
+\pagenumbering{roman}
+\input{tex/frontmatter}
+
+% ---------------------------------------------------------------- MAIN MATTER
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{tex/ch1_introduction}
+\input{tex/ch2_literature}
+\input{tex/ch3_methodology}
+\input{tex/ch4_impact_results}
+\input{tex/ch5_morphology_results}
+\input{tex/ch6_conclusions}
+
+% ---------------------------------------------------------------- REFERENCES
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{References}
+\chapter*{References}
+\markboth{References}{References}
+\bibliographystyle{apalike}
+\bibliography{references}
+
+% ---------------------------------------------------------------- APPENDICES
+\appendix
+\input{tex/appendixA}
+\input{tex/appendixB}
+
+\end{document}

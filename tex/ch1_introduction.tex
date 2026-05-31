@@ -1,0 +1,55 @@
+% ============================================================================
+\chapter{Introduction}
+\label{ch:introduction}
+% ============================================================================
+
+\section{Background: the central role of ballast in railway track}
+\label{sec:background}
+
+Railway ballast is a fundamental component of conventional track structures, consisting of coarse, angular aggregates---typically crushed stone---placed beneath and around sleepers to ensure track stability and performance. Its primary functions include distributing train loads from the sleepers to the underlying subgrade, providing lateral and longitudinal resistance to track movement, and facilitating effective drainage to prevent water accumulation and loss of strength in the track foundation (Navikas et al., 2018). The mechanical behaviour of ballast is governed by factors such as particle size, shape, gradation, and strength, which influence its load-bearing capacity and resistance to degradation under repeated train loading (Koohmishi \& Palassi, 2017). Over time, ballast experiences fouling and particle breakage, which can reduce its drainage capability and stiffness, leading to track settlement and increased maintenance requirements (Bassey et al., 2020). Recent studies emphasise the importance of understanding the geomechanical properties and dynamic response of ballast to improve track longevity and safety, especially under high-speed and heavy-haul conditions \citep{alabbasi2021}. Consequently, ongoing research explores alternative materials, stabilisation techniques, and advanced monitoring methods to enhance ballast performance and sustainability in modern railway systems.
+
+The mechanical behaviour of the ballast layer is governed, ultimately, by the morphological state of its constituent grains. Freshly quarried angular particles possess interlocking micro-asperities that generate very high inter-particle friction; a well-compacted layer of such particles can carry train loads with lateral deformations of less than a millimetre per million-gross-tonne of traffic. The same layer, after a decade of service, contains particles that have been rounded by abrasion and reduced in size by fracture. The rounded assembly has lower friction, the fractured fines infill the voids and reduce drainage, and the layer settles more quickly under each successive load cycle. Track geometry degrades, the track engineer dispatches a tamping machine, and a maintenance cycle begins. \citet{esveld2001}, \citet{lichtberger2005}, and \citet{indraratna2011} have all noted that the maintenance cost of ballasted track is dominated by this cycle, and that delaying the onset of measurable degradation by even a few years has first-order economic consequences for a national rail network.
+
+Under ordinary cyclic traffic the process of ballast degradation is gradual and reasonably predictable. Under \emph{impact} loading---the class of loading generated at rail joints, wheel flats, transition zones where the track stiffness changes abruptly, turnouts, and level crossings---the process is accelerated by impulse stresses that rise briefly to values well in excess of the contact and tensile strength of individual grains \citep{remennikov2008}. \citet{li2005} reported accelerated settlement rates in the metre-scale vicinity of bridge abutments that were several times the rate in the adjoining line, and attributed the acceleration directly to the sharp change in support stiffness that produced momentary contact-stress amplification. It is precisely at these hot-spots of impact loading that ballast degradation is most costly, both in maintenance and in the small-probability tail of safety-relevant events.
+
+For Indian Railways---the fourth-largest rail network in the world by route-kilometre and one of the most heavily loaded by axle-load-times-traffic---the engineering problem of ballast degradation is particularly sharp. The network operates a mix of \qty{22.5}{\tonne} axle-load freight, heavy-haul corridors with axle loads proposed to move beyond \qty{25}{\tonne}, high-density suburban passenger services, and, increasingly, semi-high-speed passenger traffic. The ballast specification governing this mix---\citet{rdso2023}---prescribes angular, machine-crushed stone with a \qtyrange{20}{65}{\mm} size envelope. The in-service vertical contact stress at the ballast--sleeper interface is estimated to range from approximately \qty{240}{\kPa} under ordinary passenger loading to values approaching \qty{500}{\kPa} under the combined static and dynamic action of heavy freight and impact events. Any laboratory test that purports to characterise the degradation behaviour of Indian ballast must reproduce particles in this size range and stresses in this band; any test that does not, reports a number whose physical meaning is uncertain.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.94\textwidth]{fig_track_in_service.png}
+  \caption[Indian Railways ballasted track in service]{Indian Railways ballasted track in service, showing the sleeper--ballast system.}
+  \label{fig:track_service}
+\end{figure}
+
+\section{Problem statement}
+\label{sec:problem}
+
+This thesis addresses two coupled gaps in Indian railway ballast assessment---gaps that reinforce each other and cannot be closed independently.
+
+Railroad ballast, typically composed of coarse, angular aggregates, plays a critical role in providing structural support, stability, and drainage for railway tracks \citep{selig1994}. Under repeated train loading, ballast undergoes degradation through mechanisms such as particle breakage, abrasion, and fouling, leading to reduced track performance, increased settlement, and higher maintenance costs (Indraratna et al., 2019). Traditional methods for assessing ballast degradation, such as sieve analysis and manual inspection, are time-consuming, labour-intensive, and often subjective, limiting their scalability and precision. The degradation process is influenced by factors including impact-loading conditions, particle morphology (size, shape, and surface texture), and environmental variables, yet these interactions are not fully understood or efficiently quantified (Bian et al., 2020).
+
+The primary challenge is the lack of an efficient, objective, and automated method to assess railroad ballast degradation under realistic loading conditions. Current drop-weight impact tests simulate train-induced stresses, but standard protocols do not adequately account for variations in loading intensity, frequency, or ballast morphological change over time (Koohmishi \& Palassi, 2021). Moreover, traditional post-test analysis fails to capture the dynamic evolution of particle characteristics, such as angularity loss or fragmentation patterns, which are critical to understanding degradation mechanisms (Liu et al., 2022). This gap hinders the ability to predict ballast performance, optimise maintenance schedules, and design more durable track systems. There is a need for an innovative approach that integrates advanced testing conditions with analytical tools to provide a comprehensive, data-driven assessment of ballast degradation.
+
+\section{Objectives of the thesis}
+\label{sec:objectives}
+
+The thesis pursues five objectives:
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em]
+  \item To modify the standard drop-weight impact-test apparatus (based on European standards) to replicate Indian Railways ballast characteristics and loading conditions.
+  \item To evaluate the degradation behaviour of railway ballast under repeated impact loading using the modified testing set-up.
+  \item To investigate the effectiveness of different reinforcement conditions in reducing ballast degradation under impact loads.
+  \item To quantify morphological changes in degraded ballast particles using three-dimensional image-processing techniques (e.g.\ shape, angularity, and size variations).
+  \item To establish relationships between impact-induced degradation and morphological characteristics for improved assessment of ballast performance.
+\end{enumerate}
+
+\section{Scope}
+\label{sec:scope}
+
+The scope of this thesis focuses on the experimental and analytical investigation of railway ballast degradation under controlled impact-loading conditions, with particular emphasis on adapting existing testing methodologies to Indian Railways requirements. The study involves modifying and calibrating a drop-weight impact-test apparatus, originally based on European standards, to simulate realistic loading conditions representative of Indian Railways, including higher axle loads and varying traffic characteristics. Laboratory experiments are conducted to evaluate ballast degradation behaviour under repeated impact loading, examining parameters such as particle breakage, gradation change, and degradation indices. In addition, the research assesses the effectiveness of selected reinforcement or stabilisation techniques in reducing ballast deterioration. A key component of the study is the application of advanced three-dimensional image-processing methods to quantify changes in ballast particle morphology---including shape, angularity, and surface characteristics---before and after degradation. The thesis further aims to establish correlations between mechanical degradation and morphological evolution of ballast particles, contributing to an improved understanding of ballast performance. The study is limited to laboratory-scale investigations, to the specific ballast type used by Indian Railways, and to impact-loading conditions, without extensive consideration of long-term field performance or environmental effects.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.72\textwidth]{fig_apparatus_comparison.png}
+  \caption[Modified impact-testing apparatus commissioned at GSV]{The modified impact-testing apparatus designed and commissioned at Gati Shakti Vishwavidyalaya (GSV).}
+  \label{fig:apparatus_comparison}
+\end{figure}
