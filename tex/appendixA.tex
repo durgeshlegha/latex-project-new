@@ -1,1 +1,102 @@
-% stub
+% ============================================================================
+\chapter{Tabulated Data Excerpts}
+\label{app:data}
+% ============================================================================
+
+This appendix reproduces tabulated excerpts from the principal laboratory data files referenced throughout the thesis. The full raw data---including all 45 paired before--after scans and the twenty-two descriptors per mesh---is archived in the two Excel workbooks produced by the pipeline of \cref{app:script} and is available from the authors on reasonable request.
+
+\section{Test matrix --- full specification}
+\label{sec:appA-matrix}
+
+\Cref{tab:appA-matrix} gives the complete nine-configuration test matrix with the measured peak force, kinetic energy, and nominal contact stress, together with the legacy low-height (LH, \qty{300}{\mm}) and high-height (HH, \qty{450}{\mm}) drop labels.
+
+\begin{table}[htbp]
+  \centering
+  \caption[Complete nine-configuration test matrix]{Complete nine-configuration test matrix with measured peak force, kinetic energy, nominal contact stress, and the legacy systematic test labels.}
+  \label{tab:appA-matrix}
+  \small
+  \setlength{\tabcolsep}{5pt}
+  \begin{tabular}{@{}c l c c c c c c@{}}
+    \toprule
+    \colhead{Test} & \colhead{Systematic label} & \colhead{Pad} & \colhead{Base} & \colhead{$h$ (\unit{\mm})} & \colhead{$\Ke$ (\unit{\J})} & \makecell{\colhead{Peak force}\\\colhead{(\unit{\kN})}} & \colhead{$\sigma$ (\unit{\kPa})}\\
+    \midrule
+    \test{T1} & \cfg{PUBM-FB-LH} & PUBM & FB & 300 & 147 & 19.4 & 275\\
+    \test{T2} & \cfg{RUBM-FB-LH} & RUBM & FB & 300 & 147 & 19.4 & 275\\
+    \test{T3} & \cfg{UR-FB-LH}   & UR   & FB & 300 & 147 & 19.4 & 275\\
+    \test{T4} & \cfg{UR-RB-LH}   & UR   & RB & 300 & 147 & 19.4 & 275\\
+    \test{T5} & \cfg{RUBM-RB-HH} & RUBM & RB & 450 & 221 & 37.0 & 523\\
+    \test{T6} & \cfg{PUBM-RB-HH} & PUBM & RB & 450 & 221 & 37.0 & 523\\
+    \test{T7} & \cfg{UR-RB-HH}   & UR   & RB & 450 & 221 & 37.0 & 523\\
+    \test{T8} & \cfg{RUBM-RB-LH} & RUBM & RB & 300 & 147 & 19.4 & 275\\
+    \test{T9} & \cfg{PUBM-RB-LH} & PUBM & RB & 300 & 147 & 19.4 & 275\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Per-particle paired morphology --- summary table}
+\label{sec:appA-morph}
+
+\Cref{tab:appA-morph} gives the per-configuration Mode~A summary of the principal morphological change descriptors. Mode~B outliers are excluded; $\dV$, $\dPsi$, and $\Delta C$ are reported as percentage relative change, and $n$ is the Mode~A sample size in each configuration.
+
+\begin{table}[htbp]
+  \centering
+  \caption[Per-configuration Mode~A morphological summary]{Per-configuration Mode~A summary of the principal morphological change descriptors. Mode~B outliers excluded.}
+  \label{tab:appA-morph}
+  \small
+  \setlength{\tabcolsep}{5pt}
+  \begin{tabular}{@{}c l c c S[table-format=-1.2] S[table-format=-1.2] S[table-format=-1.2]@{}}
+    \toprule
+    \colhead{Test} & \colhead{Label} & \makecell{\colhead{$n$}\\\colhead{(Mode A)}} & \makecell{\colhead{Mode B}\\\colhead{events}} & {\colhead{Mean $\pcdV$}} & {\colhead{Mean $\pcdPsi$}} & {\colhead{Mean $\pcdC$}}\\
+    \midrule
+    \test{T1} & \cfg{PUBM-FB-LH} & 5 & 0 & -0.18 & 0.56 & 0.50\\
+    \test{T2} & \cfg{RUBM-FB-LH} & 5 & 0 & -0.10 & 0.25 & 0.29\\
+    \test{T3} & \cfg{UR-FB-LH}   & 5 & 0 & -0.44 & 0.65 & 0.24\\
+    \test{T4} & \cfg{UR-RB-LH}   & 3 & 2 & -0.87 & 1.43 & 1.31\\
+    \test{T5} & \cfg{RUBM-RB-HH} & 4 & 1 & -0.84 & 0.31 & 0.27\\
+    \test{T6} & \cfg{PUBM-RB-HH} & 4 & 1 & -0.30 & 0.50 & 0.75\\
+    \test{T7} & \cfg{UR-RB-HH}   & 4 & 1 & -0.72 & 0.55 & 0.18\\
+    \test{T8} & \cfg{RUBM-RB-LH} & 4 & 1 & -0.58 & 0.68 & -0.01\\
+    \test{T9} & \cfg{PUBM-RB-LH} & 5 & 0 & -0.18 & 0.48 & 0.26\\
+    \midrule
+    \multicolumn{2}{@{}l}{All (pooled)} & 39 & 6 & -0.47 & 0.56 & 0.40\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Complete post-test sieve data}
+\label{sec:appA-sieve}
+
+\Cref{tab:appA-sieve} gives the percentage retained on each sieve, post-test, for the nine configurations. Rows are sieve sizes; columns are tests (the full configuration of each test is given in \cref{tab:appA-matrix}). Values are in weight percent of the post-test specimen mass.
+
+\begin{table}[htbp]
+  \centering
+  \caption[Complete post-test sieve data]{Percentage retained on each sieve, post-test, for the nine configurations. The lower block gives the specimen total mass and the derived fouling fractions.}
+  \label{tab:appA-sieve}
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabular}{@{}l*{9}{S[table-format=2.3]}@{}}
+    \toprule
+    \colhead{Sieve (\unit{\mm})} & {\test{T1}} & {\test{T2}} & {\test{T3}} & {\test{T4}} & {\test{T5}} & {\test{T6}} & {\test{T7}} & {\test{T8}} & {\test{T9}}\\
+    \midrule
+    63    & 7.18 & 8.34 & 8.44 & 12.11 & 8.01 & 6.45 & 8.35 & 11.00 & 8.63\\
+    40    & 9.15 & 8.09 & 6.44 & 12.25 & 12.15 & 10.85 & 9.62 & 13.02 & 9.26\\
+    31.5  & 2.11 & 2.65 & 2.15 & 2.44 & 1.55 & 5.75 & 1.50 & 3.44 & 2.53\\
+    20    & 0.210 & 0.375 & 0.500 & 0.675 & 0.270 & 0.200 & 0.125 & 0.250 & 0.270\\
+    16    & 0.010 & 0.110 & 0.050 & 0.090 & 0.036 & 0.100 & 0.080 & 0.010 & 0.033\\
+    12.5  & 0.004 & 0.043 & 0.037 & 0.120 & 0.021 & 0.015 & 0.150 & 0.022 & 0.052\\
+    10    & 0.007 & 0.026 & 0.030 & 0.070 & 0.030 & 0.011 & 0.065 & 0.010 & 0.028\\
+    4.75  & 0.012 & 0.054 & 0.044 & 0.130 & 0.071 & 0.021 & 0.130 & 0.041 & 0.040\\
+    2.36  & 0.015 & 0.009 & 0.019 & 0.038 & 0.032 & 0.009 & 0.047 & 0.019 & 0.016\\
+    1.18  & 0.010 & 0.009 & 0.014 & 0.026 & 0.025 & 0.006 & 0.046 & 0.014 & 0.012\\
+    0.6   & 0.025 & 0.005 & 0.025 & 0.014 & 0.015 & 0.004 & 0.037 & 0.010 & 0.006\\
+    0.075 & 0.022 & 0.013 & 0.022 & 0.035 & 0.050 & 0.011 & 0.083 & 0.040 & 0.024\\
+    Pan   & 0.005 & 0.004 & 0.005 & 0.013 & 0.011 & 0.004 & 0.024 & 0.010 & 0.004\\
+    \midrule
+    {\textbf{Total (g)}} & 18.76 & 19.73 & 17.78 & 28.01 & 22.27 & 23.43 & 20.26 & 27.89 & 20.91\\
+    {$\Ppass{0.075}$ (\%)} & 0.12 & 0.07 & 0.12 & 0.12 & 0.22 & 0.05 & 0.41 & 0.14 & 0.11\\
+    {$\Ppass{20}$ (\%)}    & 0.50 & 1.09 & 0.95 & 1.16 & 1.01 & 0.26 & 2.28 & 0.62 & 0.77\\
+    {$\FIIN$ (\%)}         & 0.62 & 1.16 & 1.07 & 1.28 & 1.23 & 0.31 & 2.69 & 0.76 & 0.88\\
+    \bottomrule
+  \end{tabular}
+\end{table}

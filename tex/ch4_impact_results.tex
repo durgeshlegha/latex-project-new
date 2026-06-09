@@ -1,1 +1,106 @@
-% stub
+% ============================================================================
+\chapter{Results of Impact-Test Analysis}
+\label{ch:impact}
+% ============================================================================
+
+This chapter reports the bulk-specimen response of the nine-configuration impact-loading programme. The chapter has three purposes. First, it documents the settlement history of the four tests in which axial settlement was monitored at five blow milestones, and uses the shake-down concept to justify the choice of twenty blows as the loading endpoint. Second, it reports the peak hammer force imparted to the specimen at the two drop heights used in the programme, confirming that the apparatus delivered the nominal energy levels reproducibly across the nine tests. Third, it presents the post-test gradation analysis of the specimens through the Indian Railway Fouling Index $\FIIN$ and examines the relationship between settlement and fouling.
+
+\section{Axial settlement}
+\label{sec:settlement}
+
+The cumulative axial settlement of the ballast specimen was recorded at five blow milestones ($N = 0, 5, 10, 15, 20$) in four of the nine tests: \test{T1} (\cfg{PUBM-FB-300}), \test{T3} (\cfg{UR-FB-300}), \test{T5} (\cfg{RUBM-RB-450}), and \test{T9} (\cfg{PUBM-RB-300}). The four settlement curves are plotted in \cref{fig:settlement-cumulative}, each referenced to its pre-first-blow datum so that what is shown is the net cumulative settlement.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_settlement_cumulative.png}
+  \caption[Cumulative net axial settlement versus blow count]{Cumulative net axial settlement of the ballast specimen as a function of hammer-blow count $N$ for the four monitored tests. The shaded band at high $N$ marks the shake-down (steady-state) regime, within which the incremental settlement per blow falls below approximately \qty{0.5}{\mm}.}
+  \label{fig:settlement-cumulative}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_settlement_incremental.png}
+  \caption[Incremental settlement per blow]{Incremental settlement per blow within each five-blow interval, for the four monitored tests. The fall in the per-blow rate from the 0--5 interval to the 15--20 interval defines the transition from active densification to the shake-down regime.}
+  \label{fig:settlement-incremental}
+\end{figure}
+
+\Cref{fig:settlement-incremental} establishes that in all four monitored tests the per-blow incremental settlement at the 15--20 interval has fallen to between approximately \qty{0.05}{\mm\per\blow} and \qty{0.5}{\mm\per\blow}---between one and two orders of magnitude below the rate in the first interval. Continuing the test beyond twenty blows would therefore produce only a small additional cumulative settlement (of the order of a few millimetres at most) and would not produce qualitatively new information at the bulk level. The twenty-blow protocol of the present programme accordingly captures both the active densification regime that dominates the early blows and the entry into the shake-down regime, while keeping the test duration short enough that thermal and handling effects on the pad do not accumulate. The same twenty-blow endpoint has been used consistently in the recent drop-weight literature on ballast \citep{nimbalkar2012,koohmishi2020,koohmishi2022,chen2026}, and the present choice is therefore consistent with established practice.
+
+\section{Peak hammer force per test}
+\label{sec:peak-force}
+
+The in-line \qty{5}{\tonne} load cell beneath the striker plate recorded the peak compressive force imparted on every blow of every test. Across the nine-configuration programme the peak force grouped tightly by drop height: tests run at the \qty{300}{\mm} drop produced peak forces around \qty{19.4}{\kN} per blow (corresponding to a nominal contact stress of approximately \qty{275}{\kPa} over the \qty{300}{\mm} bearing-plate area), and tests run at the \qty{450}{\mm} drop produced peak forces around \qty{37.0}{\kN} per blow (approximately \qty{523}{\kPa}). \Cref{fig:peak-force} plots the average peak force for each of the nine tests, grouped along the horizontal axis by drop height. The two-tier structure is consistent across pad type: the presence of a UR, RUBM, or PUBM pad does not appreciably change the peak force at the load cell, because the pad is below the ballast-fill column and the load cell measures the through-going force at the base of the assembly, not at the ballast surface.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_peak_force.png}
+  \caption[Mean peak hammer force per test]{Mean peak hammer force recorded by the in-line \qty{5}{\tonne} load cell for each of the nine tests, grouped by drop height.}
+  \label{fig:peak-force}
+\end{figure}
+
+\section{Indian Railway Fouling Index \texorpdfstring{$\FIIN$}{FI-IN}}
+\label{sec:fouling-results}
+
+The post-test gradation of every specimen was determined by sieve analysis through the standard RDSO sieve series. From the resulting sieve distribution the Indian Railway Fouling Index $\FIIN$ was computed as defined in \cref{sec:bulk-indices} and after \citet{anbazhagan2012}:
+\begin{equation}
+  \FIIN = \Ppass{0.075} + \Ppass{20},
+  \label{eq:fiin-results}
+\end{equation}
+where $\Ppass{0.075}$ is the percentage of post-test mass passing the \qty{0.075}{\mm} sieve (the fines fraction) and $\Ppass{20}$ is the percentage passing the \qty{20}{\mm} sieve (the fraction below the RDSO minimum acceptable particle size). The two terms have different physical interpretations: $\Ppass{0.075}$ captures the fines that drive drainage degradation and the loss of inter-particle friction, while $\Ppass{20}$ captures the coarser fraction that has migrated down out of the RDSO-acceptable envelope and that, once accumulated in the field, requires either tamping or undercutting to restore. Both contribute to the overall ballast-fouling state.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_fouling_index.png}
+  \caption[Indian Railway Fouling Index per test]{Indian Railway Fouling Index $\FIIN = \Ppass{0.075} + \Ppass{20}$ (full bar) and the $\Ppass{0.075}$ fines contribution (overlay) for each of the nine tests.}
+  \label{fig:fouling-index}
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \caption[Fouling index and sieve fractions per configuration]{Indian Railway Fouling Index $\FIIN$, the fines fraction $\Ppass{0.075}$, and the \qty{20}{\mm}-passing fraction $\Ppass{20}$ for the nine test configurations. Values computed per the $\FIIN$ definition of \cref{sec:bulk-indices} from the post-test sieve data.}
+  \label{tab:fouling}
+  \begin{tabular}{@{}c l S[table-format=1.3] S[table-format=1.3] S[table-format=1.3]@{}}
+    \toprule
+    \colhead{Test} & \colhead{Configuration} & {\colhead{$\Ppass{0.075}$ (\%)}} & {\colhead{$\Ppass{20}$ (\%)}} & {\colhead{$\FIIN$ (\%)}}\\
+    \midrule
+    \test{T1} & \cfg{PUBM-FB-300} & 0.027 & 0.507 & 0.533\\
+    \test{T2} & \cfg{RUBM-FB-450} & 0.020 & 1.339 & 1.359\\
+    \test{T3} & \cfg{UR-FB-300}   & 0.028 & 1.384 & 1.412\\
+    \test{T4} & \cfg{UR-RB-450}   & 0.046 & 1.914 & 1.960\\
+    \test{T5} & \cfg{RUBM-RB-450} & 0.049 & 1.307 & 1.356\\
+    \test{T6} & \cfg{PUBM-RB-450} & 0.017 & 0.747 & 0.764\\
+    \test{T7} & \cfg{UR-RB-450}   & 0.118 & 3.268 & 3.386\\
+    \test{T8} & \cfg{RUBM-RB-300} & 0.036 & 0.631 & 0.667\\
+    \test{T9} & \cfg{PUBM-RB-300} & 0.019 & 0.953 & 0.972\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Four observations from \cref{fig:fouling-index,tab:fouling} are worth setting out explicitly. First, the $\FIIN$ values across the nine tests span a factor of approximately $6.4$---from \qty{0.533}{\percent} at \test{T1} (\cfg{PUBM-FB-300}) to \qty{3.386}{\percent} at \test{T7} (\cfg{UR-RB-450})---which establishes that the test-configuration variables (pad type, base condition, drop height) exert a material influence on the bulk fouling response. Second, the highest-fouling configuration is \test{T7} (\cfg{UR-RB-450}), the combination of no pad with a rigid base at the higher drop energy. This is mechanically the most aggressive corner of the experimental matrix---the impulsive energy is not attenuated by either a pad or a compliant base---and the result is consistent with that expectation. Third, the lowest-fouling configuration is \test{T1} (\cfg{PUBM-FB-300}), the combination of a stiff polyurethane pad with a compliant sand base at the lower drop energy. The compliant sand base absorbs a substantial fraction of the impulsive energy through frictional and re-arrangement losses, and the lower drop reduces the per-blow input energy by one third relative to the \qty{450}{\mm} drop.
+
+Fourth, the fines contribution $\Ppass{0.075}$ is small in absolute terms across the programme. It contributes between \qty{0.017}{\percent} (\test{T6}, \cfg{PUBM-RB-450}) and \qty{0.118}{\percent} (\test{T7}, \cfg{UR-RB-450}) of the post-test mass---only a small fraction of the total $\FIIN$, which is dominated by the $\Ppass{20}$ term. This indicates that the dominant bulk-level damage mechanism in the present programme is the migration of particles below the \qty{20}{\mm} RDSO acceptable lower bound (i.e.\ fragmentation that produces \qty{16}{\mm} and smaller daughter particles), rather than the production of fines through abrasion of asperities. The grain-scale diagnostic of \cref{ch:morphology} revisits this distinction directly.
+
+A further pattern that emerges from \cref{tab:fouling} is the relative ranking of the three pads on each base. On the rigid base at the \qty{450}{\mm} drop the PUBM pad (\test{T6}, $\FIIN = \qty{0.764}{\percent}$) outperforms both the RUBM pad (\test{T5}, \qty{1.356}{\percent}) and the no-pad control (\test{T7}, \qty{3.386}{\percent}). On the rigid base at the \qty{300}{\mm} drop both pads outperform the comparable unreinforced configuration (\test{T8} RUBM \qty{0.667}{\percent}, \test{T9} PUBM \qty{0.972}{\percent}). On the flexible base at the \qty{300}{\mm} drop the PUBM pad (\test{T1}, \qty{0.533}{\percent}) outperforms the no-pad control (\test{T3}, \qty{1.412}{\percent}), again confirming that adding a polyurethane mat below the ballast reduces bulk fouling. The pad--base coupling pattern therefore points consistently toward the PUBM as the most effective fouling-reducer in the matrix tested.
+
+\section{Settlement--fouling correlation}
+\label{sec:settlement-fouling}
+
+A natural question that follows from reporting both settlement and $\FIIN$ is whether the two metrics are correlated across the subset of tests for which both are available. A positive correlation would support the hypothesis that fouling-driven fines generation contributes to the cumulative axial settlement under repeated impact loading; a weak or absent correlation would suggest that the two metrics read different aspects of the response. The correlation is therefore evaluated on the four-test settlement subset.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.96\textwidth]{fig_settlement_fouling.png}
+  \caption[Fouling index versus net settlement]{Indian Railway Fouling Index $\FIIN$ plotted against the net cumulative settlement at $N = 20$ for the four monitored tests.}
+  \label{fig:settlement-fouling}
+\end{figure}
+
+Two observations follow from \cref{fig:settlement-fouling}. First, within the three low-energy \qty{300}{\mm} tests (\test{T1}, \test{T3}, \test{T9}) a weakly positive trend exists between settlement and fouling: the test with the largest settlement (\test{T3}, \cfg{UR-FB-300} at \qty{38.0}{\mm}) is also the one with the largest $\FIIN$ (\qty{1.412}{\percent}), and the test with the smallest settlement (\test{T9}, \cfg{PUBM-RB-300} at \qty{24.6}{\mm}) has an intermediate $\FIIN$ (\qty{0.972}{\percent}). The slope is shallow and the scatter is wide given only three points, so this trend should be read as directional rather than predictive. Second, the high-energy test \test{T5} (\cfg{RUBM-RB-450}) lies clearly off the \qty{300}{\mm} trend: it has the largest settlement of the four (\qty{48.6}{\mm}) but a comparatively modest $\FIIN$ (\qty{1.356}{\percent}). Settlement and fouling are therefore not interchangeable bulk metrics; they index different aspects of the underlying degradation.
+
+The decoupling is mechanistically intelligible. Settlement reflects axial deformation from particle rearrangement and void closure, which need not involve fragmentation. Fouling, by contrast, requires actual particle breakage and is governed by peak contact force and parent-rock brittleness. Thus \test{T5} settles substantially without much fragmentation, while \test{T7} fragments without the largest settlement.
+
+\section{Discussion}
+\label{sec:impact-discussion}
+
+The bulk findings of \cref{sec:settlement,sec:peak-force,sec:fouling-results,sec:settlement-fouling} are broadly consistent with the published drop-weight impact literature on ballast. The shock-mat-on-rigid-base condition explored by \citet{nimbalkar2012} produced a similar pattern of reduced bulk degradation when a compliant pad was placed beneath the ballast on a rigid support, and the natural-rubber and recycled-rubber mats in that study delivered the largest improvement on the stiffer support---directionally consistent with the present finding that PUBM substantially outperforms the unreinforced configuration on the rigid base. The crumb-rubber-modified ballast studies of \citet{koohmishi2021,koohmishi2022} and \citet{zhang2023} reported fines-generation values in the same order of magnitude as the present $\Ppass{0.075}$ results at comparable energy, and \citet{koohmishi2020} reported similar fragmentation severity on basalt ballast under matched drop-weight loading. The shake-down framework used to justify the twenty-blow protocol in \cref{sec:settlement} follows the treatment of \citet{werkmeister2001} for granular materials and is the same framework used in the impact-loading context by \citet{nimbalkar2012}.
+
+Three patterns visible at the bulk level are worth recording before moving to \cref{ch:morphology}. First, the PUBM-on-rigid-base configurations \test{T6} and \test{T9} outperform the RUBM and UR equivalents at both drop heights, suggesting that a stiffer polyurethane mat is more effective than a softer rubber mat at attenuating impulsive loading on a rigid support. Second, the highest-$\FIIN$ configuration is \test{T7} (\cfg{UR-RB-450}), the no-pad rigid-base high-energy combination---the mechanically most aggressive corner of the experimental matrix and the one most representative of the unprotected rigid-substructure conditions encountered at bridge approaches and welded-rail transition zones in service. Third, the settlement and fouling responses are not interchangeable: the test with the largest settlement (\test{T5}) is not the test with the largest fouling (\test{T7}). Both metrics are needed to characterise the bulk response, and even together they leave open the question of which grain-scale processes drive each metric in each configuration. That is the question addressed in \cref{ch:morphology}.

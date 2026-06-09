@@ -1,1 +1,408 @@
-% stub
+% ============================================================================
+\chapter{Materials and Methodology}
+\label{ch:methodology}
+% ============================================================================
+
+This chapter documents the materials, the apparatus, the test protocol, and the per-particle morphological-analysis pipeline used in the experimental programme. The chapter is the longest in the thesis because the programme combines two methodological strands---bulk-index testing through a modified drop-weight impact apparatus, and paired three-dimensional morphological characterisation of individually marked tracer particles---and reproducibility of either strand requires a fully specified procedure. The chapter is organised into eight sections following the natural workflow of the programme: materials (\cref{sec:basalt}), pad and base conditions (\cref{sec:reinf-conditions}), tracer-particle preparation (\cref{sec:scanning}), the modified drop-weight impact apparatus (\cref{sec:apparatus}), stress-and-energy calibration to Indian Railways field loading (\cref{sec:calibration}), the blow-by-blow test protocol and bulk-index computation (\cref{sec:sample-prep}), the image-based three-dimensional morphological-analysis pipeline (\cref{sec:morph-pipeline}), and finally the statistical framework that supports the analysis of \cref{ch:impact,ch:morphology} (\cref{sec:stats}). The full ten-stage experimental flowchart that ties the bulk and per-particle streams together is summarised in \cref{fig:flowchart}.
+
+\section{Basalt ballast}
+\label{sec:basalt}
+
+\subsection{Source and parent rock}
+\label{sec:source}
+
+All ballast used in the experimental programme was sourced from a single quarry supplying RDSO-specification railway ballast in the Vadodara region of Gujarat, India. A single source was used to eliminate parent-rock variability as a confounding factor between tests: any cross-test difference in degradation can then be attributed to the reinforcement configuration rather than to unrecorded mineralogical variation. The parent rock is basalt---a fine-grained, dense, aphanitic igneous rock with a dry particle density of \qty{2.76}{\g\per\cm\cubed} and a low water absorption ($<\qty{1}{\percent}$). These figures are consistent with the RDSO specification \citep{rdso2023} requirement of not less than \qty{2.60}{\g\per\cm\cubed} dry density and with the parent-rock properties reported for comparable basalt in the impact literature \citep{koohmishi2020,zhang2023}.
+
+Approximately \qty{25000}{\kg} of ballast was procured for the programme---much more than required for the nine main tests (approximately \qty{20}{\kg} each), for the preliminary calibration trials run during apparatus commissioning, and for a replacement reserve. All nine tests therefore drew from the same stockpile and the same parent rock. The stockpile was kept covered and elevated from direct ground contact between tests to prevent contamination of the void-fouling baseline.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.86\textheight,keepaspectratio]{fig_methodology_flowchart.png}
+  \caption[Experimental methodology flowchart]{Experimental methodology flowchart for the ten-stage programme.}
+  \label{fig:flowchart}
+\end{figure}
+
+\subsection{Particle size distribution and the RDSO envelope}
+\label{sec:psd}
+
+The as-supplied ballast was characterised by dry-sieve analysis using the following sieve series: 63, 50, 40, 31.5, 25, 20, 16, 12.5, 10, 4.75, 2.36, 0.6, 0.15, and \qty{0.075}{\mm}. Sieving was performed on sample masses of approximately \qty{10}{\kg} in accordance with the spirit of the RDSO procedure \citep{rdso2023}. The resulting gradation, plotted in \cref{fig:psd} against the RDSO upper and lower envelope curves, shows that the ballast conforms to the specification with a small reserve against both limits---the target gradation sits close to the mid-band of the envelope throughout the \qtyrange{20}{63}{\mm} range. The percentage retained on the \qty{65}{\mm} sieve was below the \qty{5}{\percent} maximum permitted by the specification; the percentage passing the \qty{20}{\mm} sieve was below \qty{2}{\percent}, well within the \qty{2}{\percent} maximum fines limit. The gradation is therefore centred within the acceptable window and is representative of production-quality RDSO ballast.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_psd_envelope.png}
+  \caption[Pre-test particle-size distribution against the RDSO envelope]{Pre-test particle-size distribution of the basalt ballast used in the experimental programme, plotted against the upper and lower envelope curves of the RDSO specification.}
+  \label{fig:psd}
+\end{figure}
+
+\subsection{Physical and mechanical properties}
+\label{sec:properties}
+
+The ballast was characterised for the physical and mechanical properties required by the RDSO specification. The measurements are summarised in \cref{tab:properties}. All values fall within the RDSO acceptance thresholds; the Aggregate Impact Value measured on the artificially crushed \qtyrange{10}{12.5}{\mm} sub-sample is reported here for completeness but is precisely the index whose limitations are set out in \cref{ch:introduction,ch:literature}---the present thesis argues that this index cannot, by its apparatus geometry, characterise the degradation behaviour of full-size RDSO-gradation ballast, and the remainder of the programme accordingly reports the bulk fouling index $\FIIN$ on the full-size specimen.
+
+\begin{table}[htbp]
+  \centering
+  \caption[Physical and mechanical properties of the basalt ballast]{Physical and mechanical properties of the basalt ballast used in the experimental programme.}
+  \label{tab:properties}
+  \setlength{\tabcolsep}{5pt}
+  \begin{tabular}{@{}>{\RaggedRight}p{0.40\textwidth} c c >{\RaggedRight}p{0.27\textwidth}@{}}
+    \toprule
+    \colhead{Property} & \colhead{Measured} & \colhead{RDSO limit} & \colhead{Method}\\
+    \midrule
+    Dry particle density (\unit{\g\per\cm\cubed}) & 2.78 & $\ge 2.60$ & Gas pycnometer + weighing\\
+    Bulk (loose) density (\unit{\kg\per\m\cubed}) & 1460 & Not specified & Bulk volume in mould\\
+    Water absorption (\unit{\percent}) & 0.72 & $\le 1.0$ & ASTM C127 equivalent\\
+    Aggregate Abrasion Value, LAA (\unit{\percent}) & 15.4 & $\le 30$ & IS:2386 Pt IV\\
+    Aggregate Impact Value (\unit{\percent}) & 12.1 & $\le 20$ & IS:2386 Pt IV (conventional)\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.94\textwidth]{fig_ballast_pile.jpeg}
+  \caption[RDSO-gradation basalt ballast stockpile]{Pile of the RDSO-gradation basalt ballast used in the experimental programme (Civil Lab, GSV).}
+  \label{fig:ballast-pile}
+\end{figure}
+
+\section{Reinforcement conditions}
+\label{sec:reinf-conditions}
+
+Three pad conditions and two base conditions are crossed in the factorial test matrix. The three pad conditions are an Unreinforced (UR) control, a Rubber Under-Ballast Mat (RUBM), and a Polyurethane Under-Ballast Mat (PUBM). The two base conditions are a Flexible Base (FB) of compacted sand and a Rigid Base (RB) of the concrete mould floor. The systematic three-letter abbreviations are introduced formally in this thesis as a replacement for the ad-hoc numbered test labels used in earlier laboratory work.
+
+The UR configuration places no pad between the ballast fill and the base element of the mould. The UR condition serves three analytical purposes simultaneously: it is the mechanical control against which the two pad conditions are compared; it represents the in-service condition of legacy ballasted track with no substructure reinforcement; and it isolates the effect of the base condition (flexible sand versus rigid concrete) from the effect of any compliant pad placed above it. The UR condition is present in three of the nine test configurations, providing the baseline against which the pad-protected configurations are measured.
+
+The RUBM material is a commercially manufactured \qty{12}{\mm} thick sheet of vulcanised natural rubber with a Shore~A hardness of approximately 65 and a nominal bulk density of \qty{1.35}{\g\per\cm\cubed}. The sheet was cut to a circular disc matching the \qty{300}{\mm} internal diameter of the test mould and placed flat on the base element before the ballast fill. The compliance of the RUBM falls in the middle of the range reported in the literature for natural-rubber under-ballast mats \citep{navaratnarajah2017,ngo2019}---sufficient to dissipate a meaningful fraction of the hammer impulse energy while stiff enough to recover elastically between blows without progressive plastic deformation of the pad itself. No RUBM specimen was reused between tests; a fresh \qty{12}{\mm} disc was cut for every test to eliminate any carry-over effect of cumulative pad damage.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.68\textwidth]{fig_rubm.jpeg}
+  \caption[Rubber Under-Ballast Mat (RUBM)]{Rubber Under-Ballast Mat (RUBM) disc: \qty{12}{\mm} thick natural rubber, cut to \qty{300}{\mm} diameter.}
+  \label{fig:rubm}
+\end{figure}
+
+The PUBM material is a commercial Getzner polyurethane under-ballast mat product. Getzner is a widely adopted supplier of polyurethane track-resilient elements on European, Australian, and Indian mainline and urban rail networks, and the specific variant used in this study is representative of the stiffness range in which Getzner UBM products are typically deployed beneath ballast in transition zones and impact-prone locations. The PUBM disc was cut to \qty{300}{\mm} diameter, matching the mould internal diameter, like the RUBM. \citet{gundavaram2023} has previously demonstrated, in cyclic-triaxial tests on Indian ballast, that an elastomeric-polyurethane inclusion materially reduces both cumulative plastic deformation and the rate of fines generation, and the use of PUBM in the present programme extends that line of evidence from cyclic to impact loading.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.74\textwidth]{fig_pubm.jpeg}
+  \caption[Polyurethane Under-Ballast Mat (PUBM)]{Polyurethane Under-Ballast Mat (PUBM, commercial Getzner product), cut to \qty{300}{\mm} diameter.}
+  \label{fig:pubm}
+\end{figure}
+
+\subsection{Base conditions (FB / RB)}
+\label{sec:base-conditions}
+
+The base condition---the element directly beneath the pad, or beneath the ballast if no pad is used---is the second factorial variable in the experimental design. The FB condition comprises a \qty{100}{\mm} deep cushion of clean, medium-grained quartz sand placed at the base of the test mould before the pad and ballast fill. The sand was oven-dried to constant mass and compacted in the mould by a standardised vibratory compaction protocol to a bulk density of approximately \qty{1.60}{\g\per\cm\cubed}. The RB condition places the ballast fill (with or without the interposed pad) directly on the concrete floor of the test mould. The concrete floor is several orders of magnitude stiffer than either the pad or the sand base and is effectively unyielding at the stress levels delivered by the hammer.
+
+The two base conditions are chosen to bracket the stiffness range that a ballast layer might encounter in service: the FB approximates a well-compacted granular sub-ballast, while the RB approximates an unyielding structural element such as a bridge deck, a concrete track-slab foundation, or a poorly maintained subgrade that has densified below its own elastic limit. The factorial crossing of pad and base conditions allows the pad-effect contribution and the base-effect contribution to be separated cleanly, which is the analytical design that \citet{nimbalkar2012} identified as essential for distinguishing pad performance from sub-grade compliance in laboratory shock-mat work.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.55\textwidth]{fig_mould_fb.jpeg}
+  \caption[Test mould with flexible-base sand cushion]{Test mould prepared with the \qty{100}{\mm} flexible-base sand cushion (FB condition), photographed immediately before placement of the pad and the ballast fill.}
+  \label{fig:mould-fb}
+\end{figure}
+
+\section{Particle scanning}
+\label{sec:scanning}
+
+\subsection{Rationale for the paired-particle design}
+\label{sec:paired-rationale}
+
+The thesis rests on a paired-particle experimental design: the same physical grains are scanned before and after the impact-loading event, and the grain-scale damage is tracked within each particle rather than averaged across the population. The paired design is the methodological centre of gravity of the study, and its value is two-fold. First, it eliminates the particle-to-particle variability in initial shape---which in any typical ballast assembly is considerable, with volumes ranging over almost an order of magnitude across the \qtyrange{20}{65}{\mm} gradation---as a source of scatter in the damage signal. Second, it enables the direct attribution of each observed change in shape descriptors to the loading event, because any change recorded in the after-scan that is not also present in the before-scan of the same particle must have arisen from the hammer blows.
+
+\subsection{Selection criteria}
+\label{sec:selection}
+
+Tracer particles were selected from the bulk stockpile by visual inspection and by calliper measurement. Three criteria were applied in sequence; a candidate particle had to satisfy all of them to be accepted as a tracer.
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+  \item \textbf{Size:} the equivalent spherical diameter---estimated at the selection stage from the three calliper-measured principal dimensions---had to fall in the \qtyrange{30}{65}{\mm} range.
+  \item \textbf{Shape:} particles with extreme flatness or elongation (aspect ratio $L/S > 3$ by initial calliper reading) were rejected, because such shapes produce preferentially high breakage under impact loading and would distort the Mode~A / Mode~B distribution.
+  \item \textbf{Parent freshness:} candidates showing any visible weathering rind, iron-oxide staining, or surface cementation were rejected.
+\end{enumerate}
+
+Each selected tracer particle was individually marked with a unique code. The marking protocol uses a paint marker applied to a clean, dry surface patch on each particle. The paint coat is thin ($<\qty{0.2}{\mm}$) and does not measurably affect either the volume or the surface area computed from the scans.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.55\textwidth]{fig_tracer_particles.jpeg}
+  \caption[Marked tracer particles]{Some of the marked tracer particles, showing the white acrylic-paint patch and the hand-written numeric identifier code.}
+  \label{fig:tracer-particles}
+\end{figure}
+
+\subsection{Pre-test structured-light scanning}
+\label{sec:pre-scan}
+
+Each tracer particle was scanned on an EinScan (Shining 3D Technology Co.\ Ltd., Hangzhou, China) desktop structured-light scanner. The EinScan~SE was used across the programme, providing a geometric accuracy of approximately \qty{0.1}{\mm} and a scan resolution of approximately \qty{0.15}{\mm} in the automatic-turntable mode used here. The detailed scan protocol and mesh quality-control procedures are set out in \cref{sec:morph-pipeline}, in the context of the morphological-analysis pipeline. In the present sub-section, pre-test scanning is described as part of specimen preparation: every tracer particle carried a complete, validated, watertight triangular surface mesh in STL format into the impact test, and the pre-test mesh serves as the reference state against which the post-test mesh is paired.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_einscan.jpeg}
+  \caption[EinScan structured-light scanner in operation]{EinScan structured-light scanner (Shining 3D) in operation, with a marked tracer particle mounted on the automatic turntable.}
+  \label{fig:einscan}
+\end{figure}
+
+\section{The modified drop-weight impact apparatus}
+\label{sec:apparatus}
+
+The apparatus comprises five principal components: a cylindrical cast-iron test mould of \qty{300}{\mm} internal diameter and \qty{350}{\mm} internal depth, seated on a rigid reaction base-plate; a vertical guide frame of four mild-steel columns connected by an upper crosshead; a cylindrical cast-iron hammer of \qty{50}{\kg} mass, sliding on the guide columns in free fall; a continuously adjustable hammer release-and-locking mechanism graduated over the \qtyrange{200}{450}{\mm} range of drop height; and a load-transfer assembly consisting of a \qty{300}{\mm} bearing plate, a compression-type \qty{5}{\tonne} strain-gauge load cell, and a hardened-steel striker plate. A mechanical blow counter and two manual operating handles complete the assembly. The mould diameter of \qty{300}{\mm} delivers a $\Ddmax$ ratio of approximately 6 against the RDSO \qty{50}{\mm} mean particle size, eliminating the boundary-dominance of the conventional IS:2386 Part~IV apparatus \citep{bis1963} and bringing the present rig into the design envelope established by \citet{nimbalkar2012} and the subsequent impact literature surveyed in \cref{sec:impact-lab}.
+
+The adjustable release mechanism permits the hammer to be locked at any drop height between \qty{200}{\mm} and \qty{450}{\mm} against a graduated scale on one of the four guide columns, so that the same apparatus can deliver a range of impact energies without disassembly. The in-line load cell measures the dynamic peak force imparted through the striker plate on every blow and transmits the signal to a digital peak-force indicator; this allows each test to be characterised not only by its nominal drop-energy but by the actual force time-series, which is the principal advance of the present rig over the conventional apparatus. The mechanical blow counter provides a redundant and power-independent count of delivered blows. Detailed design drawings, material specifications, tolerance callouts, and the safety-interlock documentation are set out in the utility patent application filed for this apparatus.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.76\textwidth]{fig_apparatus.png}
+  \caption[Modified drop-weight impact apparatus]{Modified drop-weight impact apparatus designed and commissioned at GSV.}
+  \label{fig:apparatus-photo}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_load_transfer.png}
+  \caption[Load-transfer assembly and peak-force display]{Close-up of the load-transfer assembly (bearing plate, \qty{5}{\tonne} load cell, striker plate) and the digital peak-force display.}
+  \label{fig:load-transfer}
+\end{figure}
+
+\subsection{Comparison with the conventional Aggregate Impact Value apparatus}
+\label{sec:aiv-comparison}
+
+\Cref{tab:apparatus-comparison} sets out the principal specification of the modified apparatus in comparison to the conventional IS:2386 Part~IV Aggregate Impact Value apparatus. Only the headline parameters are listed; the full specification is in the patent documentation.
+
+\begin{table}[htbp]
+  \centering
+  \caption[Modified apparatus versus the conventional AIV apparatus]{Principal specification of the modified apparatus compared to the conventional IS:2386 Part~IV Aggregate Impact Value apparatus.}
+  \label{tab:apparatus-comparison}
+  \small
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.30\textwidth} L L@{}}
+    \toprule
+    \colhead{Parameter} & \colhead{Conventional AIV (IS:2386 Pt IV)} & \colhead{Modified apparatus (present)}\\
+    \midrule
+    Mould internal diameter   & \qty{102}{\mm} & \qty{300}{\mm}\\
+    Mould effective depth     & ${\sim}\,\qty{50}{\mm}$ & \qty{350}{\mm}\\
+    Hammer mass               & \qty{13.5}{\kg} & \qty{50}{\kg}\\
+    Drop height               & \qty{380}{\mm} (fixed) & \qtyrange{200}{450}{\mm} (adjustable)\\
+    Particle size tested      & \qtyrange{10}{12.5}{\mm} (crushed sub-sample) & \qtyrange{20}{63}{\mm} (full RDSO gradation)\\
+    Approx.\ particles per test & 2--4 & 40--80\\
+    $\Ddmax$ ratio            & ${\approx}\,1.6$ (boundary-dominated) & ${\approx}\,5$\\
+    Stress simulation         & Fixed / none & \qtyrange{275}{523}{\kPa} (adjustable; maps to \qty{22.5}{\tonne} axle)\\
+    Real-time force measurement & None & \qty{5}{\tonne} load cell + digital peak-force indicator\\
+    Blow counting             & Manual & Integrated mechanical counter\\
+    Post-test degradation metric & AIV (\% fines through \qty{2.36}{\mm}) & $\FIIN$ + paired per-particle morphology\\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section{Stress and energy calibration to Indian Railways field loading}
+\label{sec:calibration}
+
+The calibration of the apparatus to in-service stress conditions proceeds in two steps: first, the in-service stress range at the top of the ballast layer under Indian Railways axle loading is estimated; second, the hammer mass and drop-height range of the apparatus are chosen to span this in-service range when divided by the mould cross-sectional area.
+
+\subsection{Field stress estimation}
+\label{sec:field-stress}
+
+The wheel load is distributed through the rail to several sleepers, and thence to the ballast over the effective sleeper--ballast bearing area. For a \qty{22.5}{\tonne} axle the static wheel load on each rail is $W \approx \qty{110.25}{\kN}$. Only a fraction of this wheel load is transmitted to the most heavily loaded sleeper---the remainder being shared with adjacent sleepers through the bending stiffness of the rail---so the effective rail-seat load transmitted to a single sleeper--ballast contact is $Q_{\mathrm{r}} \approx \qty{27.5}{\kN}$. Taking an effective rail-seat bearing area below a single rail seat of $\Ab \approx \qty{1100}{\cm\squared} = \qty{0.11}{\m\squared}$, the static contact stress at the top of the ballast is
+\begin{equation}
+  \sigma_{\mathrm{static}} = \frac{Q_{\mathrm{r}}}{\Ab}
+    \approx \frac{\qty{27.5}{\kN}}{\qty{0.11}{\m\squared}}
+    \approx \qty{250}{\kPa}.
+  \label{eq:field-stress}
+\end{equation}
+Applying a conservative dynamic amplification of $1.5$ under ordinary mainline traffic yields $\sigma \approx \qty{375}{\kPa}$; at impact-prone locations, where the amplification can reach $2\times$ or higher, the contact stress rises into the \qtyrange{500}{600}{\kPa} range. The in-service stress window at the top of the ballast layer under Indian Railways traffic is therefore conservatively taken as approximately \qtyrange{250}{550}{\kPa}, with the upper end reflecting heavy-haul and transition-zone conditions.
+
+\subsection{Apparatus stress and energy}
+\label{sec:apparatus-stress}
+
+For the modified apparatus the nominal contact stress $\sigma$ is the peak hammer force $F$ divided by the bearing-plate area $\Ap$, and the hammer kinetic energy at impact is $\Ke = mgh$, where $m$ is the hammer mass (\qty{50}{\kg}), $g$ the gravitational acceleration (\qty{9.81}{\m\per\s\squared}), and $h$ the drop height:
+\begin{equation}
+  \sigma = \frac{F}{\Ap}, \qquad \Ke = mgh, \qquad
+  \Ap = \pi \times (\qty{0.150}{\m})^2 = \qty{0.0707}{\m\squared}.
+  \label{eq:apparatus-stress}
+\end{equation}
+Using the measured peak forces reported at commissioning---$F \approx \qty{19.4}{\kN}$ at $h = \qty{300}{\mm}$ and $F \approx \qty{37.0}{\kN}$ at $h = \qty{450}{\mm}$---the two apparatus operating points correspond to
+\begin{align}
+  h = \qty{300}{\mm}:\quad
+    &\Ke = 50 \times 9.81 \times 0.300 = \qty{147}{\J}, &
+    \sigma &= \frac{\qty{19.4}{\kN}}{\qty{0.0707}{\m\squared}} \approx \qty{275}{\kPa};
+    \label{eq:op-lh}\\[2pt]
+  h = \qty{450}{\mm}:\quad
+    &\Ke = 50 \times 9.81 \times 0.450 = \qty{221}{\J}, &
+    \sigma &= \frac{\qty{37.0}{\kN}}{\qty{0.0707}{\m\squared}} \approx \qty{523}{\kPa}.
+    \label{eq:op-hh}
+\end{align}
+These two operating points---\qty{275}{\kPa} at \qty{147}{\J} and \qty{523}{\kPa} at \qty{221}{\J}---correspond respectively to the lower end (ordinary mainline traffic) and the upper end (heavy-haul and transition-zone conditions) of the in-service stress window. The two drop heights selected for the test programme therefore bracket the Indian Railways field-loading envelope cleanly. The adjustability of the drop-height mechanism over the full \qtyrange{200}{450}{\mm} range---rather than only the two operating points used in the present programme---leaves open the possibility of finer calibration to specific axle-load classes in future work.
+
+\section{Sample preparation}
+\label{sec:sample-prep}
+
+\subsection{Specimen assembly}
+\label{sec:specimen-assembly}
+
+The nine test specimens were assembled using a single standardised protocol that produces reproducible specimens across the three pad conditions and the two base conditions. The protocol comprises eleven discrete steps, summarised here in the order of execution: (1)~inspection and cleaning of the cylindrical test mould; (2)~base preparation; (3)~pad placement, where applicable, with fresh discs cut for every test; (4)~tracer-particle placement at pre-assigned positions in the lower-middle of the ballast fill, with no tracer-to-tracer or tracer-to-wall direct contacts; (5)~bulk-fill placement of the remainder of the \qty{20}{\kg} specimen mass in two lifts; (6)~final levelling of the top surface with the load-transfer bearing-plate verification; (7)~load-cell zeroing and digital-indicator verification; (8)~photographic baseline record; (9)~hammer positioning and locking at the specified drop height; (10)~blow delivery; (11)~test termination, tracer recovery, and bulk-fill collection for sieve analysis.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.73\textwidth]{fig_specimen_assembly.png}
+  \caption[Assembling the test specimen in the mould]{Assembling the test specimen in the mould (photographed without the load-cell assembly).}
+  \label{fig:specimen-assembly}
+\end{figure}
+
+\subsection{Blow-by-blow test protocol}
+\label{sec:blow-protocol}
+
+Each of the nine tests was conducted using an identical blow-by-blow protocol. Twenty free-fall blows were delivered per test from the nominated drop height (either \qty{300}{\mm} or \qty{450}{\mm}). The choice of twenty blows is guided by two considerations. First, it is consistent with the number of blows used in comparable published drop-weight studies on ballast \citep{nimbalkar2012,koohmishi2020,zhang2023}. Second, the preliminary trials showed that the settlement--blow curve flattens substantially between blow~15 and blow~20 and enters a near-stable zone beyond blow~15; twenty blows therefore captures both the transient settlement regime and the early approach to the steady state.
+
+The twenty blows were delivered in rapid succession, with an interval of \qtyrange{5}{8}{\s} between consecutive blows---long enough for the operators to safely re-raise and re-lock the hammer and to record the peak-force reading, but short enough that cumulative heating of the rubber or polyurethane pad is negligible. The hammer release was triggered by two-operator manual action at the upper crosshead. After each blow the hammer was secured at the crosshead before the peak-force value was read. Axial settlement was measured at five blow milestones ($N = 0, 5, 10, 15, 20$) with a depth gauge seated on the mould rim. The digital peak-force indicator was observed and recorded for each test.
+
+\subsection{Test matrix and nomenclature}
+\label{sec:test-matrix}
+
+The nine test configurations are defined by the factorial crossing of the three pad conditions (UR / RUBM / PUBM), the two base conditions (FB / RB), and the two impact energies (\qty{300}{\mm} and \qty{450}{\mm} drop heights of the \qty{50}{\kg} hammer, corresponding to nominal contact stresses of \qty{275}{\kPa} and \qty{523}{\kPa} as derived in \cref{sec:calibration}). The nine cells listed in \cref{tab:test-matrix} cover the factorial, with three cells (the FB-450 combinations) omitted because apparatus commissioning revealed that at the \qty{450}{\mm} drop height the sand cushion under the FB condition would progressively lose bearing capacity through cumulative compaction over twenty blows and would thereby confound the pad-effect signal with a base-consolidation signal.
+
+\begin{table}[htbp]
+  \centering
+  \caption[The nine test configurations]{The nine test configurations of the experimental programme.}
+  \label{tab:test-matrix}
+  \begin{tabular}{@{}c l c c c c c@{}}
+    \toprule
+    \colhead{Test} & \colhead{Systematic label} & \colhead{Pad} & \colhead{Base} & \colhead{$h$ (\unit{\mm})} & \colhead{$\sigma$ (\unit{\kPa})} & \colhead{$\Ke$ (\unit{\J})}\\
+    \midrule
+    \test{T1} & \cfg{UR-FB-300}   & UR   & FB & 300 & 275 & 147\\
+    \test{T2} & \cfg{RUBM-FB-300} & RUBM & FB & 300 & 275 & 147\\
+    \test{T3} & \cfg{PUBM-FB-300} & PUBM & FB & 300 & 275 & 147\\
+    \test{T4} & \cfg{UR-RB-450}   & UR   & RB & 450 & 523 & 221\\
+    \test{T5} & \cfg{RUBM-RB-450} & RUBM & RB & 450 & 523 & 221\\
+    \test{T6} & \cfg{PUBM-RB-450} & PUBM & RB & 450 & 523 & 221\\
+    \test{T7} & \cfg{UR-RB-300}   & UR   & RB & 300 & 275 & 147\\
+    \test{T8} & \cfg{RUBM-RB-300} & RUBM & RB & 300 & 275 & 147\\
+    \test{T9} & \cfg{PUBM-RB-300} & PUBM & RB & 300 & 275 & 147\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Post-test sieve analysis}
+\label{sec:sieve}
+
+At the end of each test the full bulk fill, together with any fines recovered from the mould floor after tracer extraction, was sieved through the same sieve series used for the pre-test gradation characterisation (63, 50, 40, 31.5, 25, 20, 16, 12.5, 10, 4.75, 2.36, 0.6, 0.15, and \qty{0.075}{\mm}).
+
+\subsection{Bulk degradation indices}
+\label{sec:bulk-indices}
+
+A single fouling-based degradation index is computed on the post-test gradation: the Indian Railway Fouling Index $\FIIN$. Following the \citet{anbazhagan2012} adaptation of \citet{selig1994},
+\begin{equation}
+  \FIIN = \Ppass{0.075} + \Ppass{20},
+  \label{eq:fiin-method}
+\end{equation}
+where $\Ppass{0.075}$ and $\Ppass{20}$ are the weight percent passing the \qty{0.075}{\mm} and \qty{20}{\mm} sieves, respectively. The first term captures fines; the second captures the total fraction lost from the acceptable RDSO ballast gradation.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.72\textwidth]{fig_sieve_analysis.jpeg}
+  \caption[Post-impact-test sieve analysis]{Post-impact-test sieve analysis.}
+  \label{fig:sieve-analysis}
+\end{figure}
+
+\section{Image-based three-dimensional morphological analysis}
+\label{sec:morph-pipeline}
+
+\subsection{Scan protocol and mesh quality control}
+\label{sec:scan-protocol}
+
+The seven-step scan protocol applied identically to every particle in the programme---both pre-test and post-test---comprises: (1)~cleaning (water wash, soft-brush scrub, distilled-water rinse, oven-dry at \qty{105}{\celsius}); (2)~mounting on a low-tack dark putty pad at the centre of the automatic turntable; (3)~lighting adjustment to soft diffuse ambient; (4)~first-orientation eight-view turntable scan at \ang{45} steps; (5)~reorientation of the particle to expose the previously unscanned under-side and a second eight-view scan; (6)~automatic hole-filling using the scanner software; (7)~export of the final merged watertight triangular surface mesh to STL format.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.78\textwidth]{fig_scanning_process.jpeg}
+  \caption[Particle scanning process]{Particle scanning process used in the present study.}
+  \label{fig:scanning-process}
+\end{figure}
+
+\subsection{Twenty-two morphological descriptors}
+\label{sec:descriptors}
+
+Twenty-two morphological descriptors are computed per mesh in three families, summarised in \cref{tab:descriptors}: nine size descriptors ($V$, $A$, $\Deq$, $S$, $I$, $L$, $\Vch$, $\Ach$, and the three ellipsoid semi-axes $a$, $b$, $c$); five form descriptors (flatness $F = S/I$, elongation $E = I/L$, aspect ratio $L/S$, flatness index $(L+I)/(2S)$, and Zingg-triangle position); and eight roundness and texture descriptors (sphericity $\Psi$, convexity $C = V/\Vch$, scanner roundness $R$, angularity $\mathrm{Ang}$, surface-texture index $T = A/\Ach$, sphericity ratio $\kappa_{\mathrm{s}} = \Deq/L$, and the cross-check pair $\nu_{\mathrm{ch}}$ and $A_{\mathrm{ratio}}$). The classical Wadell sphericity \citep{wadell1932} and the Krumbein roundness concept \citep{krumbein1941} remain the two principal reporting axes for grain-scale degradation.
+
+\begin{table}[htbp]
+  \centering
+  \caption[The twenty-two morphological descriptors]{The twenty-two morphological descriptors computed per mesh, grouped by family.}
+  \label{tab:descriptors}
+  \small
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabularx}{\textwidth}{@{}l L l@{}}
+    \toprule
+    \colhead{Symbol} & \colhead{Descriptor} & \colhead{Definition}\\
+    \midrule
+    \multicolumn{3}{@{}l}{\textit{Size family (9)}}\\
+    $V$        & Volume & mesh volume (\unit{\mm\cubed})\\
+    $A$        & Surface area & mesh area (\unit{\mm\squared})\\
+    $\Deq$     & Equivalent spherical diameter & $(6V/\pi)^{1/3}$\\
+    $S,I,L$    & Short / intermediate / long dimension & oriented bounding box\\
+    $\Vch$     & Convex-hull volume & \unit{\mm\cubed}\\
+    $\Ach$     & Convex-hull surface area & \unit{\mm\squared}\\
+    $a,b,c$    & Ellipsoid semi-axes & best-fit ellipsoid, $a\ge b\ge c$\\
+    \addlinespace
+    \multicolumn{3}{@{}l}{\textit{Form family (5)}}\\
+    $F$        & Flatness & $S/I$\\
+    $E$        & Elongation & $I/L$\\
+    $L/S$      & Aspect ratio & $L/S$\\
+    ---        & Flatness index & $(L+I)/(2S)$\\
+    ---        & Zingg-triangle position & class from $F$, $E$\\
+    \addlinespace
+    \multicolumn{3}{@{}l}{\textit{Roundness \& texture family (8)}}\\
+    $\Psi$     & Sphericity (Wadell) & $\pi^{1/3}(6V)^{2/3}/A$\\
+    $C$        & Convexity & $V/\Vch$\\
+    $R$        & Roundness & scanner-specific\\
+    $\mathrm{Ang}$ & Angularity index & log-curvature scalar\\
+    $T$        & Surface-texture index & $A/\Ach$\\
+    $\kappa_{\mathrm{s}}$ & Sphericity ratio & $\Deq/L$\\
+    $\nu_{\mathrm{ch}}$ & Volume cross-check ratio & convex-hull ratio\\
+    $A_{\mathrm{ratio}}$ & Area cross-check ratio & area ratio\\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.91\textwidth]{fig_exscan_software.jpeg}
+  \caption[Ballast particle scanning in EXScan]{Ballast particle scanning in the EXScan software.}
+  \label{fig:exscan}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.93\textwidth]{fig_particle_aligning.jpeg}
+  \caption[Particle aligning for multiple scans]{Particle aligning for multiple scans.}
+  \label{fig:particle-aligning}
+\end{figure}
+
+\subsection{Python script}
+\label{sec:python-script}
+
+The descriptors are computed by a purpose-built Python~3 pipeline based on the \texttt{trimesh} \citep{trimesh2019}, NumPy \citep{harris2020}, and SciPy \citep{virtanen2020} libraries. The pipeline executes a sequence of stages on each particle's before-and-after mesh pair: (i)~load the STL; (ii)~run the four-check quality-control gate; (iii)~compute the size descriptors; (iv)~compute the form descriptors; (v)~compute the roundness and texture descriptors; and (vi)~export to a multi-sheet Excel workbook with sheets for \emph{Before}, \emph{After}, \emph{Changes} (After~$-$~Before), and \emph{Percent Changes}. The complete script is reproduced in \cref{app:script} and has been unit-tested against synthetic reference meshes (sphere, ellipsoid, cube).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.91\textwidth]{fig_running_script.jpeg}
+  \caption[Screenshot of the running analysis script]{Screenshot of the running morphological-analysis script.}
+  \label{fig:running-script}
+\end{figure}
+
+\section{Statistical framework}
+\label{sec:stats}
+
+The two characterisation streams of the programme---the bulk fouling index and the per-particle morphology---are analysed with a small, deliberately conservative set of statistical tools. This section defines them once so that \cref{ch:impact,ch:morphology} can refer to them without repetition.
+
+\subsection{Paired comparison and significance testing}
+\label{sec:paired-test}
+
+Because every tracer particle is scanned both before and after loading, each morphological descriptor $X$ yields a paired sample $\{(X_{\mathrm{before}}^{(i)}, X_{\mathrm{after}}^{(i)})\}$ over the tracer population. The change for particle $i$ is $\Delta X^{(i)} = X_{\mathrm{after}}^{(i)} - X_{\mathrm{before}}^{(i)}$, and the percentage change is $\%\Delta X^{(i)} = 100\,\Delta X^{(i)}/X_{\mathrm{before}}^{(i)}$. The null hypothesis that the loading produces no systematic change in $X$ is tested with the two-sided paired Student's $t$-test on $\Delta X$, reporting the $t$-statistic and the associated $p$-value. Pairing removes the particle-to-particle variability in initial shape and thereby sharpens the test relative to an unpaired comparison.
+
+\subsection{Outlier identification by the Tukey inter-quartile-range fence}
+\label{sec:tukey}
+
+A small number of particles experience catastrophic single-particle fracture (Mode~B) rather than diffuse abrasion (Mode~A), producing volume-change values far below the bulk of the population. These are identified objectively with the standard Tukey $1.5\times$IQR criterion. With $Q_1$ and $Q_3$ the first and third quartiles of the per-particle $\%\Delta V$ distribution and $\mathrm{IQR} = Q_3 - Q_1$, a particle is flagged as an outlier (Mode~B) if its $\%\Delta V$ lies outside the fence
+\begin{equation}
+  \bigl[\, Q_1 - 1.5\,\mathrm{IQR}, \;\; Q_3 + 1.5\,\mathrm{IQR} \,\bigr].
+  \label{eq:tukey}
+\end{equation}
+Particles within the fence constitute the Mode~A (inlier) population; descriptor statistics are reported on the inlier population, with the outliers quoted separately rather than averaged in.
